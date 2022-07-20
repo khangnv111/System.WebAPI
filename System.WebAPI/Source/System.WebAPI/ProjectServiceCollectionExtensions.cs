@@ -1,6 +1,7 @@
 namespace System.WebAPI;
 
 using System.EntityFramework.Commands.Auth;
+using System.EntityFramework.Commands.Giftcode;
 using System.EntityFramework.Commands.Groups;
 using System.EntityFramework.Commands.Permission;
 using System.EntityFramework.Commands.Users;
@@ -48,6 +49,8 @@ internal static class ProjectServiceCollectionExtensions
         .AddScoped<PermissionUpdateCommand>()
         .AddScoped<PermissionRemoveCommand>()
         .AddScoped<PermissionGetListCommand>()
+        // GiftCode
+        .AddScoped<GiftCodeListCommand>()
         // Auth
         .AddScoped<CmsLoginCommand>();
 

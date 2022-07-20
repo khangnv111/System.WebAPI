@@ -17,11 +17,37 @@ namespace System.EntityFramework.Commands.Giftcode
             this.giftCode = giftCode;
         }
 
-        public async Task<IActionResult> ExecuteAsync(CancellationToken cancellationToken)
+        public async Task<IActionResult> ExecuteAsync(string giftCodeName, string fromDate, string toDate, CancellationToken cancellationToken)
         {
-            
+            try
+            {
+                var startDate = DateTime.Now.AddMonths(-3);
+                if (!string.IsNullOrEmpty(fromDate))
+                {
+                    startDate = DateTime.Parse(fromDate);
+                }
+                var endDate = DateTime.Now;
+                if (!string.IsNullOrEmpty(toDate))
+                {
+                    endDate = DateTime.Parse(toDate);
+                }
+                giftCodeName = string.IsNullOrEmpty(giftCodeName) ? "" : giftCodeName;
 
-            return new OkObjectResult(new DataResponse());
+                // Get list giftcode
+                var listGiftCode = await giftCode.GetGiftCodeListAsync(giftCodeName, startDate, endDate).ConfigureAwait(false);
+
+                var recordData = new DataRecord();
+                recordData.TotalRecords = listGiftCode.Count;
+                recordData.Records = listGiftCode;
+
+                return new OkObjectResult(new DataResponse(recordData));
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult(ex);
+            }
+
+
         }
     }
 }

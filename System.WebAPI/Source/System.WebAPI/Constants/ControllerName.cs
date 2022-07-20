@@ -8,4 +8,5 @@ public static class ControllerName
     public const string Groups = nameof(Groups);
     public const string Permission = nameof(Permission);
     public const string Auth = nameof(Auth);
+    public const string GiftCode = nameof(GiftCode);
 }
