@@ -1,0 +1,7 @@
+System.EntityFramework/bin/*
+System.EntityFramework/obj/*
+System.Models/bin/*
+System.Models/obj/*
+System.Utils/bin/*
+System.Utils/obj/*
+.vs/*

@@ -17,6 +17,7 @@ namespace System.EntityFramework.Responsitories.BillingGiftCode
             this.dbContext = dbContext;
         }
 
+        #region GiftCode
         public Task<List<GiftCode>> GetGiftCodeListAsync(string giftCodeName, DateTime? fromDate, DateTime? toDate)
         {
             var list = dbContext.GifCode.OrderByDescending(x => x.CreateTime)
@@ -32,5 +33,16 @@ namespace System.EntityFramework.Responsitories.BillingGiftCode
             var giftCode = dbContext.GifCode.FirstOrDefault(x => x.GifCodeID == giftCodeId);
             return Task.FromResult(giftCode);
         }
+        #endregion
+
+        #region GiftCode Data
+        public Task<List<GiftCodeData>> GetGiftCodeDataListAsync(long giftCodeId)
+        {
+            var list = dbContext.GifCodeData.Take(1000).ToList();
+            //var list = dbContext.GifCodeData.Where(x => x.GifCodeID == giftCodeId).ToList();
+
+            return Task.FromResult(list);
+        }
+        #endregion
     }
 }

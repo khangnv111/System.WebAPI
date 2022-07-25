@@ -5,6 +5,7 @@ namespace System.EntityFramework.Responsitories.BillingGiftCode
     public interface IGiftCodeReponsitory
     {
         Task<GiftCode?> GetGiftCodeByIdAsync(int giftCodeId);
+        Task<List<GiftCodeData>> GetGiftCodeDataListAsync(long giftCodeId);
         Task<List<GiftCode>> GetGiftCodeListAsync(string giftCodeName, DateTime? fromDate, DateTime? toDate);
     }
 }

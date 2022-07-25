@@ -17,12 +17,15 @@ namespace System.Models.Model.BillingGiftCode
         [Column("GifCode")]
         public string GiftCode { get; set; } = string.Empty;
         public int Value { get; set; }
-        public int IsUsed { get; set; }
+        public int? EventID { get; set; }
+        public bool IsUsed { get; set; }
         public int SourceID { get; set; }
         public int Type { get; set; }
+        public int Status { get; set; }
         public int NumberUsed { get; set; }
-        public int AccountID { get; set; }
-        public string AccountName { get; set; } = string.Empty;
+        public long? AccountID { get; set; }
+        //public string AccountName { get; set; } = string.Empty;
+
         public DateTime? UsedTime { get; set; }
         public DateTime CreateTime { get; set; } = DateTime.Now;
         public DateTime? StartDate { get; set; }
