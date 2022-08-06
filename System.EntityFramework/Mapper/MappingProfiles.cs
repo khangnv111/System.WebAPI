@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Models.Model.Admin;
+using System.Models.Model.BillingGiftCode;
 using System.Models.ViewModel.User;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace System.EntityFramework.Mapper
 
             CreateMap<SaveGroup, Group>();
             CreateMap<Group, SaveGroup>();
+
+            CreateMap<Models.ViewModel.GiftCode.SaveGiftCode, GiftCode>();
         }
     }
 }

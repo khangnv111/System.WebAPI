@@ -22,6 +22,7 @@ namespace System.Models.Model.BillingGiftCode
         public int EndDateInt { get; set; }
         public DateTime CreateTime { get; set; } = DateTime.Now;
         public string CreateByStaff { get; set; } = string.Empty;
+        public int Status { get; set; }
 
         public DateTime UpdateTime { get; set; } = DateTime.Now;
         public string UpdateByStaff { get; set; } = string.Empty;

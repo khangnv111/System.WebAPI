@@ -52,6 +52,7 @@ internal static class ProjectServiceCollectionExtensions
         // GiftCode
         .AddScoped<GiftCodeListCommand>()
         .AddScoped<GiftCodeDataListCommand>()
+        .AddScoped<GiftCodeAddCommand>()
         // Auth
         .AddScoped<CmsLoginCommand>();
 

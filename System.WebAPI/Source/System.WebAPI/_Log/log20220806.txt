@@ -1,0 +1,56 @@
+2022-08-06 11:56:47.246 +07:00 [INF] Starting System....
+2022-08-06 11:56:48.513 +07:00 [INF] Started System Operation Project in Development mode with runtime .NET 6.0.5 and OS Microsoft Windows 10.0.19044.
+2022-08-06 11:56:48.580 +07:00 [INF] User profile is available. Using 'C:\Users\Dominic\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-06 11:56:49.087 +07:00 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2022-08-06 11:56:49.099 +07:00 [INF] Now listening on: http://[::]:5000
+2022-08-06 11:56:49.101 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-06 11:56:49.102 +07:00 [INF] Hosting environment: Development
+2022-08-06 11:56:49.104 +07:00 [INF] Content root path: D:\WorkSpace\1. C#\System.WebAPI\System.WebAPI\Source\System.WebAPI
+2022-08-06 11:56:49.539 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/giftcode/create application/json 175
+2022-08-06 11:56:49.834 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html - -
+2022-08-06 11:56:49.893 +07:00 [INF] No cached response available for this request.
+2022-08-06 11:56:50.158 +07:00 [INF] The response could not be cached for this request.
+2022-08-06 11:56:50.219 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html - - - 200 - text/html;charset=utf-8 382.5213ms
+2022-08-06 11:56:50.246 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '6/18/2022 4:13:34 PM', Current time: '8/6/2022 4:56:50 AM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-08-06 11:56:50.316 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '6/18/2022 4:13:34 PM', Current time: '8/6/2022 4:56:50 AM'.
+2022-08-06 11:56:50.327 +07:00 [INF] Executing endpoint 'System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI)'
+2022-08-06 11:56:50.373 +07:00 [INF] Route matched with {action = "CreateGiftCode", controller = "GiftCode"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateGiftCodeAsync(System.Models.ViewModel.GiftCode.SaveGiftCode, System.EntityFramework.Commands.Giftcode.GiftCodeAddCommand, System.Threading.CancellationToken) on controller System.WebAPI.Controllers.GiftCodeController (System.WebAPI).
+2022-08-06 11:56:50.608 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2022-08-06 11:56:50.611 +07:00 [INF] No cached response available for this request.
+2022-08-06 11:56:50.615 +07:00 [INF] Executing endpoint '/swagger/{documentName}/swagger.{json|yaml} HTTP: GET'
+2022-08-06 11:56:50.739 +07:00 [INF] Test logging.............
+2022-08-06 11:56:50.745 +07:00 [INF] End.......
+2022-08-06 11:56:50.760 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Models.ViewModel.DataResponse'.
+2022-08-06 11:56:50.778 +07:00 [INF] Executed action System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI) in 394.9907ms
+2022-08-06 11:56:50.782 +07:00 [INF] Executed endpoint 'System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI)'
+2022-08-06 11:56:50.793 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/giftcode/create application/json 175 - 200 - application/vnd.restful+json;+charset=utf-8 1263.1940ms
+2022-08-06 11:56:51.056 +07:00 [INF] Executed endpoint '/swagger/{documentName}/swagger.{json|yaml} HTTP: GET'
+2022-08-06 11:56:51.059 +07:00 [INF] The response could not be cached for this request.
+2022-08-06 11:56:51.061 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 452.9691ms
+2022-08-06 11:58:11.042 +07:00 [INF] Starting System....
+2022-08-06 11:58:12.117 +07:00 [INF] Started System Operation Project in Development mode with runtime .NET 6.0.5 and OS Microsoft Windows 10.0.19044.
+2022-08-06 11:58:12.180 +07:00 [INF] User profile is available. Using 'C:\Users\Dominic\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-06 11:58:12.706 +07:00 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2022-08-06 11:58:12.723 +07:00 [INF] Now listening on: http://[::]:5000
+2022-08-06 11:58:12.724 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-06 11:58:12.725 +07:00 [INF] Hosting environment: Development
+2022-08-06 11:58:12.727 +07:00 [INF] Content root path: D:\WorkSpace\1. C#\System.WebAPI\System.WebAPI\Source\System.WebAPI
+2022-08-06 11:58:13.348 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html - -
+2022-08-06 11:58:13.416 +07:00 [INF] No cached response available for this request.
+2022-08-06 11:58:13.646 +07:00 [INF] The response could not be cached for this request.
+2022-08-06 11:58:13.652 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html - - - 200 - text/html;charset=utf-8 308.1377ms
+2022-08-06 11:58:13.962 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2022-08-06 11:58:13.968 +07:00 [INF] No cached response available for this request.
+2022-08-06 11:58:14.005 +07:00 [INF] Executing endpoint '/swagger/{documentName}/swagger.{json|yaml} HTTP: GET'
+2022-08-06 11:58:14.345 +07:00 [INF] Executed endpoint '/swagger/{documentName}/swagger.{json|yaml} HTTP: GET'
+2022-08-06 11:58:14.347 +07:00 [INF] The response could not be cached for this request.
+2022-08-06 11:58:14.349 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 387.0851ms

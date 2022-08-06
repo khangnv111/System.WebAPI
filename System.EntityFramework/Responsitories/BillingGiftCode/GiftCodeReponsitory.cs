@@ -33,15 +33,42 @@ namespace System.EntityFramework.Responsitories.BillingGiftCode
             var giftCode = dbContext.GifCode.FirstOrDefault(x => x.GifCodeID == giftCodeId);
             return Task.FromResult(giftCode);
         }
+
+        public Task<GiftCode> AddGiftCodeAsync(GiftCode giftcode)
+        {
+            giftcode.CreateTime = DateTime.Now;
+            giftcode.UpdateTime = DateTime.Now;
+            _ = dbContext.Add(giftcode);
+            _ = dbContext.SaveChanges();
+
+            return Task.FromResult(giftcode);
+        }
         #endregion
 
         #region GiftCode Data
         public Task<List<GiftCodeData>> GetGiftCodeDataListAsync(long giftCodeId)
         {
-            var list = dbContext.GifCodeData.Take(1000).ToList();
-            //var list = dbContext.GifCodeData.Where(x => x.GifCodeID == giftCodeId).ToList();
+            //var list = dbContext.GifCodeData.Take(1000).ToList();
+            var list = dbContext.GifCodeData.Where(x => x.GifCodeID == giftCodeId).ToList();
 
             return Task.FromResult(list);
+        }
+
+        public Task<GiftCodeData> AddGiftCodeDataAsync(GiftCodeData data)
+        {
+            data.CreateTime = DateTime.Now;
+            _ = dbContext.Add(data);
+            _ = dbContext.SaveChanges();
+
+            return Task.FromResult(data);
+        }
+
+        public Task<List<GiftCodeData>> AddListGiftCodeDataAsync(List<GiftCodeData> data)
+        {
+            _ = dbContext.AddRangeAsync(data);
+            _ = dbContext.SaveChanges();
+
+            return Task.FromResult(data);
         }
         #endregion
     }

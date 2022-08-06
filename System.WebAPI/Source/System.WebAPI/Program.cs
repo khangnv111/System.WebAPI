@@ -1,6 +1,8 @@
 namespace System.WebAPI;
 
 using System.WebAPI.Options;
+using Serilog;
+using Serilog.Events;
 
 public class Program
 {
@@ -10,11 +12,24 @@ public class Program
 
         try
         {
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .WriteTo.File("_Log/log.txt",
+                rollingInterval: RollingInterval.Day,
+                rollOnFileSizeLimit: true)
+            .CreateLogger();
+
+            Log.Information("Starting System....");
+
             host = CreateHostBuilder(args).Build();
 
             host.LogApplicationStarted();
             await host.RunAsync().ConfigureAwait(false);
             host.LogApplicationStopped();
+
+            Log.CloseAndFlush();
 
             return 0;
         }
@@ -23,6 +38,9 @@ public class Program
 #pragma warning restore CA1031 // Do not catch general exception types
         {
             host!.LogApplicationTerminatedUnexpectedly(exception);
+
+            Log.Fatal(exception, "Host terminated unexpectedly");
+            Log.CloseAndFlush();
 
             return 1;
         }
@@ -46,6 +64,7 @@ public class Program
                     options.ValidateScopes = isDevelopment;
                     options.ValidateOnBuild = isDevelopment;
                 })
+            .UseSerilog()
             .ConfigureWebHost(ConfigureWebHostBuilder)
             .UseConsoleLifetime();
 

@@ -23,5 +23,25 @@ namespace System.Utils
                 return Convert.ToHexString(hashBytes);
             }
         }
+
+        public static int ConvertDateToInt(DateTime? date)
+        {
+            if (date == null)
+                return 0;
+
+            var Year = date.Value.Year;
+            var Month = date.Value.Month;
+            var Day = date.Value.Day;
+
+            return (Year * 100 + Month) * 100 + Day;
+        }
+
+        public static string RandomString(int length)
+        {
+            Random random = new Random();
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
     }
 }

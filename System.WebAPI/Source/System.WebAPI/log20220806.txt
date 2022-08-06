@@ -1,0 +1,59 @@
+2022-08-06 10:33:22.320 +07:00 [INF] Starting System....
+2022-08-06 10:52:38.365 +07:00 [INF] Starting System....
+2022-08-06 10:52:39.567 +07:00 [INF] Started System Operation Project in Development mode with runtime .NET 6.0.5 and OS Microsoft Windows 10.0.19044.
+2022-08-06 10:52:39.625 +07:00 [INF] User profile is available. Using 'C:\Users\Dominic\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-06 10:52:40.143 +07:00 [WRN] Overriding address(es) 'http://localhost:5000'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2022-08-06 10:52:40.160 +07:00 [INF] Now listening on: http://[::]:5000
+2022-08-06 10:52:40.163 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-06 10:52:40.165 +07:00 [INF] Hosting environment: Development
+2022-08-06 10:52:40.166 +07:00 [INF] Content root path: D:\WorkSpace\1. C#\System.WebAPI\System.WebAPI\Source\System.WebAPI
+2022-08-06 10:52:40.841 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/index.html - -
+2022-08-06 10:52:40.919 +07:00 [INF] No cached response available for this request.
+2022-08-06 10:52:41.249 +07:00 [INF] The response could not be cached for this request.
+2022-08-06 10:52:41.257 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/index.html - - - 200 - text/html;charset=utf-8 419.3046ms
+2022-08-06 10:52:41.565 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2022-08-06 10:52:41.570 +07:00 [INF] No cached response available for this request.
+2022-08-06 10:52:41.575 +07:00 [INF] Executing endpoint '/swagger/{documentName}/swagger.{json|yaml} HTTP: GET'
+2022-08-06 10:52:41.889 +07:00 [INF] Executed endpoint '/swagger/{documentName}/swagger.{json|yaml} HTTP: GET'
+2022-08-06 10:52:41.893 +07:00 [INF] The response could not be cached for this request.
+2022-08-06 10:52:41.895 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 329.6267ms
+2022-08-06 10:53:40.350 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/giftcode/create application/json 175
+2022-08-06 10:53:40.601 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '6/18/2022 4:13:34 PM', Current time: '8/6/2022 3:53:40 AM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-08-06 10:53:41.192 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '6/18/2022 4:13:34 PM', Current time: '8/6/2022 3:53:40 AM'.
+2022-08-06 10:53:41.203 +07:00 [INF] Executing endpoint 'System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI)'
+2022-08-06 10:53:41.244 +07:00 [INF] Route matched with {action = "CreateGiftCode", controller = "GiftCode"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateGiftCodeAsync(System.Models.ViewModel.GiftCode.SaveGiftCode, System.EntityFramework.Commands.Giftcode.GiftCodeAddCommand, System.Threading.CancellationToken) on controller System.WebAPI.Controllers.GiftCodeController (System.WebAPI).
+2022-08-06 10:53:41.547 +07:00 [INF] Test logging.............
+2022-08-06 10:53:41.556 +07:00 [INF] End.......
+2022-08-06 10:53:41.570 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Models.ViewModel.DataResponse'.
+2022-08-06 10:53:41.588 +07:00 [INF] Executed action System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI) in 334.5154ms
+2022-08-06 10:53:41.594 +07:00 [INF] Executed endpoint 'System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI)'
+2022-08-06 10:53:41.600 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/giftcode/create application/json 175 - 200 - application/vnd.restful+json;+charset=utf-8 1250.0351ms
+2022-08-06 10:54:33.248 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/giftcode/create application/json 175
+2022-08-06 10:54:33.266 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '6/18/2022 4:13:34 PM', Current time: '8/6/2022 3:54:33 AM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-08-06 10:54:33.283 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '6/18/2022 4:13:34 PM', Current time: '8/6/2022 3:54:33 AM'.
+2022-08-06 10:54:33.288 +07:00 [INF] Executing endpoint 'System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI)'
+2022-08-06 10:54:33.290 +07:00 [INF] Route matched with {action = "CreateGiftCode", controller = "GiftCode"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateGiftCodeAsync(System.Models.ViewModel.GiftCode.SaveGiftCode, System.EntityFramework.Commands.Giftcode.GiftCodeAddCommand, System.Threading.CancellationToken) on controller System.WebAPI.Controllers.GiftCodeController (System.WebAPI).
+2022-08-06 10:54:33.309 +07:00 [INF] Test logging.............
+2022-08-06 10:54:33.310 +07:00 [INF] End.......
+2022-08-06 10:54:33.314 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Models.ViewModel.DataResponse'.
+2022-08-06 10:54:33.323 +07:00 [INF] Executed action System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI) in 28.3488ms
+2022-08-06 10:54:33.327 +07:00 [INF] Executed endpoint 'System.WebAPI.Controllers.GiftCodeController.CreateGiftCodeAsync (System.WebAPI)'
+2022-08-06 10:54:33.329 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/giftcode/create application/json 175 - 200 - application/vnd.restful+json;+charset=utf-8 81.1183ms
